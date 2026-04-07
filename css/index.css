@@ -1,0 +1,24 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* voorkomt dat je scherm mee scrollt op mobiel */
+  width: 100%;
+  height: 100%;
+}
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#joystick {
+  position: fixed;
+  bottom: 5%;
+  left: 5%;
+  width: 100px;
+  height: 100px;
+  max-width: 120px;
+  max-height: 120px;
+  touch-action: none; /* belangrijk voor mobiel */
+}
+
