@@ -64,8 +64,6 @@ const cube = new THREE.Mesh(
     new THREE.BoxGeometry(),
     new THREE.MeshStandardMaterial({ color: 0x00ff00 })
 );
-cube.position.set(0, 0, 0);
-scene.add(cube);
 
 // texture (images voor de bomen)
 function createTree(x, z) {
