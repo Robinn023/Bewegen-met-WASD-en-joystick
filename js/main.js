@@ -36,16 +36,6 @@ scene.add(new THREE.AmbientLight(0xffffff, 0.3));
 // Textures (images) 
 const textureLoader = new THREE.TextureLoader();
 
-const barkTexture = textureLoader.load('bark.jpg');
-barkTexture.wrapS = THREE.RepeatWrapping;
-barkTexture.wrapT = THREE.RepeatWrapping;
-barkTexture.repeat.set(1, 2);
-
-const leavesTexture = textureLoader.load('Bladeren.png');
-leavesTexture.wrapS = THREE.RepeatWrapping;
-leavesTexture.wrapT = THREE.RepeatWrapping;
-leavesTexture.repeat.set(2, 2);
-
 const groundTexture = textureLoader.load('Gras.webp');
 groundTexture.wrapS = THREE.RepeatWrapping;
 groundTexture.wrapT = THREE.RepeatWrapping;
@@ -64,28 +54,6 @@ const cube = new THREE.Mesh(
     new THREE.BoxGeometry(),
     new THREE.MeshStandardMaterial({ color: 0x00ff00 })
 );
-
-// texture (images voor de bomen)
-function createTree(x, z) {
-    const trunk = new THREE.Mesh(
-        new THREE.CylinderGeometry(0.5, 0.5, 10, 32),
-        new THREE.MeshStandardMaterial({ map: barkTexture })
-    );
-    trunk.position.set(x, 4, z);
-    scene.add(trunk);
-
-    const leaves = new THREE.Mesh(
-        new THREE.ConeGeometry(5, 10, 32),
-        new THREE.MeshStandardMaterial({ map: leavesTexture })
-    );
-    leaves.position.set(x, 9, z);
-    scene.add(leaves);
-}
-
-createTree(-7, -2);
-createTree(-19, -2);
-createTree(20, -2);
-createTree(10, 30)
 
 // input functie
 const keys = { w:false, a:false, s:false, d:false };
